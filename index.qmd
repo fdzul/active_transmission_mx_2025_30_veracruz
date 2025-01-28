@@ -1,0 +1,141 @@
+---
+title: "Programa de Prevención & Control del Dengue | 2025"
+format: 
+  dashboard:
+      nav-buttons: [twitter, github, facebook]
+theme: custom.scss
+---
+
+```{r setup}
+library(sf)
+mapview::mapviewOptions(default = TRUE,
+                        basemaps.color.shuffle = FALSE)
+if(as.vector(Sys.info()["sysname"]) == "Darwin"){
+load("/Users/felipedzul/Library/CloudStorage/OneDrive-Personal/proyects/geocoding_mex/2025/8.RData/denmex_2025.RData")
+} else if(as.vector(Sys.info()["sysname"]) == "Windows"){
+   load("D:\\OneDrive\\proyects\\geocoding_mex\\2024\\8.RData\\denmex_2024.RData")
+} else if(as.vector(Sys.info()["sysname"]) == "Linux"){
+    
+}
+library(magrittr)
+```
+
+
+
+# [**Cadenas de Transmisión**]{style="font-size:8pt"}
+
+::: panel-tabset
+
+### [**Veracruz**]{style="color:#990000"}
+
+```{r}
+denhotspots::transmission_chains_map(geocoded_dataset = z,
+                                     cve_edo = "30",
+                                     locality = c("Veracruz", "Boca del Rio"),
+                                     dengue_cases = "Confirmado")
+```
+
+
+### [**Xalapa**]{style="color:#990000"}
+
+```{r}
+denhotspots::transmission_chains_map(geocoded_dataset = z,
+                                     cve_edo = "30",
+                                     locality = "Xalapa de Enriquez",
+                                     dengue_cases = "Confirmado")
+
+```
+
+
+
+### [**Coatzacoalcos**]{style="color:#990000"}
+
+```{r}
+denhotspots::transmission_chains_map(geocoded_dataset = z,
+                                     cve_edo = "30",
+                                     locality = c("Coatzacoalcos",
+                                                  "Puerto Esmeraldas",
+                                                  "Fraccionamiento Ciudad Olmecas",
+                                                  "Allende",
+                                                  "Lomas de Barrandillas"),
+                                     dengue_cases = "Confirmado")
+```
+
+
+:::
+
+
+
+# [**Mapas de Calor**]{style="font-size:8pt"}
+
+::: panel-tabset
+
+### [**Veracruz**]{style="color:#990000"}
+
+```{r}
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "30",
+                   locality = "Veracruz",
+                   status_caso = c(1, 2),
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+
+### [**Xalapa**]{style="color:#990000"}
+
+```{r}
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "30",
+                   locality = "Xalapa de Enriquez",
+                   status_caso = c(1, 2),
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+### [**Coatzacoalcos**]{style="color:#990000"}
+
+```{r}
+densnv::mp_heatmap(geocoded_datasets = z,
+                   cve_edo = "30",
+                   locality = c("Coatzacoalcos",
+                                "Puerto Esmeralda"),
+                   status_caso = c(1, 2),
+                   week = c(1:53),
+                   zoom = NULL,
+                   map_type = NULL,
+                   alpha = 0.6,
+                   static = FALSE,
+                   palette = viridis::turbo)
+```
+
+:::
+
+
+# [**Log-Gaussian Cox Processes**]{style="font-size:8pt"}
+
+::: panel-tabset
+
+### [**Veracruz**]{style="color:#990000"}
+
+Los casos de dengue hasta la presente fecha son insuficientes para correr el modelo espacial Log Gaussian Cox Processes, hay que esperar hasta que el tamaño de muestra sea adecuado para la implementación de este modelo.
+
+### [**Xalapa**]{style="color:#990000"}
+
+Los casos de dengue hasta la presente fecha son insuficientes para correr el modelo espacial Log Gaussian Cox Processes, hay que esperar hasta que el tamaño de muestra sea adecuado para la implementación de este modelo.
+
+### [**Coatzacoalcos**]{style="color:#990000"}
+
+
+Los casos de dengue hasta la presente fecha son insuficientes para correr el modelo espacial Log Gaussian Cox Processes, hay que esperar hasta que el tamaño de muestra sea adecuado para la implementación de este modelo.
+
+:::
+
