@@ -28,7 +28,7 @@ library(magrittr)
 
 ### [**Veracruz**]{style="color:#990000"}
 
-```{r}
+```{r chains_veracruz}
 denhotspots::transmission_chains_map(geocoded_dataset = z,
                                      cve_edo = "30",
                                      locality = c("Veracruz", "Boca del Rio"),
@@ -38,28 +38,11 @@ denhotspots::transmission_chains_map(geocoded_dataset = z,
 
 ### [**Xalapa**]{style="color:#990000"}
 
-```{r}
-denhotspots::transmission_chains_map(geocoded_dataset = z,
-                                     cve_edo = "30",
-                                     locality = "Xalapa de Enriquez",
-                                     dengue_cases = "Confirmado")
-
-```
 
 
 
 ### [**Coatzacoalcos**]{style="color:#990000"}
 
-```{r}
-denhotspots::transmission_chains_map(geocoded_dataset = z,
-                                     cve_edo = "30",
-                                     locality = c("Coatzacoalcos",
-                                                  "Puerto Esmeraldas",
-                                                  "Fraccionamiento Ciudad Olmecas",
-                                                  "Allende",
-                                                  "Lomas de Barrandillas"),
-                                     dengue_cases = "Confirmado")
-```
 
 
 :::
@@ -72,7 +55,7 @@ denhotspots::transmission_chains_map(geocoded_dataset = z,
 
 ### [**Veracruz**]{style="color:#990000"}
 
-```{r}
+```{r heatmap_veracruz}
 densnv::mp_heatmap(geocoded_datasets = z,
                    cve_edo = "30",
                    locality = "Veracruz",
@@ -88,7 +71,7 @@ densnv::mp_heatmap(geocoded_datasets = z,
 
 ### [**Xalapa**]{style="color:#990000"}
 
-```{r}
+```{r heatmap_xalapa}
 densnv::mp_heatmap(geocoded_datasets = z,
                    cve_edo = "30",
                    locality = "Xalapa de Enriquez",
@@ -103,7 +86,7 @@ densnv::mp_heatmap(geocoded_datasets = z,
 
 ### [**Coatzacoalcos**]{style="color:#990000"}
 
-```{r}
+```{r heatmap_coatza}
 densnv::mp_heatmap(geocoded_datasets = z,
                    cve_edo = "30",
                    locality = c("Coatzacoalcos",
