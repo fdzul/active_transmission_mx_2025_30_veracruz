@@ -38,7 +38,7 @@ denhotspots::transmission_chains_map(geocoded_dataset = z,
 
 ### [**Xalapa**]{style="color:#990000"}
 
-```{r}
+```{r chains_xalapa}
 denhotspots::transmission_chains_map(geocoded_dataset = z,
                                      cve_edo = "30",
                                      locality = "Xalapa de Enriquez",
@@ -105,23 +105,4 @@ densnv::mp_heatmap(geocoded_datasets = z,
 
 :::
 
-
-# [**Log-Gaussian Cox Processes**]{style="font-size:8pt"}
-
-::: panel-tabset
-
-### [**Veracruz**]{style="color:#990000"}
-
-Los casos de dengue hasta la presente fecha son insuficientes para correr el modelo espacial Log Gaussian Cox Processes, hay que esperar hasta que el tamaño de muestra sea adecuado para la implementación de este modelo.
-
-### [**Xalapa**]{style="color:#990000"}
-
-Los casos de dengue hasta la presente fecha son insuficientes para correr el modelo espacial Log Gaussian Cox Processes, hay que esperar hasta que el tamaño de muestra sea adecuado para la implementación de este modelo.
-
-### [**Coatzacoalcos**]{style="color:#990000"}
-
-
-Los casos de dengue hasta la presente fecha son insuficientes para correr el modelo espacial Log Gaussian Cox Processes, hay que esperar hasta que el tamaño de muestra sea adecuado para la implementación de este modelo.
-
-:::
 
