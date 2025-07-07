@@ -10,13 +10,7 @@ theme: custom.scss
 library(sf)
 mapview::mapviewOptions(default = TRUE,
                         basemaps.color.shuffle = FALSE)
-if(as.vector(Sys.info()["sysname"]) == "Darwin"){
-load("/Users/felipedzul/OneDrive/proyects/geocoding_mex/2025/8.RData/denmex_2025.RData")
-} else if(as.vector(Sys.info()["sysname"]) == "Windows"){
-   load("D:\\OneDrive\\proyects\\geocoding_mex\\2024\\8.RData\\denmex_2024.RData")
-} else if(as.vector(Sys.info()["sysname"]) == "Linux"){
-    
-}
+load("~/Documents/geocoding_mx/2025/8.RData/denmex_2025.RData")
 library(magrittr)
 ```
 
@@ -59,7 +53,7 @@ denhotspots::transmission_chains_map(geocoded_dataset = z,
 ### [**Veracruz**]{style="color:#990000"}
 
 ```{r heatmap_veracruz}
-densnv::mp_heatmap(geocoded_datasets = z,
+densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "30",
                    locality = "Veracruz",
                    status_caso = c(1, 2),
@@ -76,7 +70,7 @@ densnv::mp_heatmap(geocoded_datasets = z,
 ### [**Xalapa**]{style="color:#990000"}
 
 ```{r heatmap_xalapa}
-densnv::mp_heatmap(geocoded_datasets = z,
+densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "30",
                    locality = "Xalapa de Enriquez",
                    status_caso = c(1, 2),
@@ -92,12 +86,12 @@ densnv::mp_heatmap(geocoded_datasets = z,
 ### [**Coatzacoalcos**]{style="color:#990000"}
 
 ```{r heatmap_coatza}
-densnv::mp_heatmap(geocoded_datasets = z,
+densnv::mp_heatmap(geocoded_dataset = z,
                    cve_edo = "30",
                    locality = c("Coatzacoalcos",
                                 "Puerto Esmeralda"),
                    status_caso = c(1, 2),
-                   kernel = 700,
+                   kernel = 000,
                    week = c(1:53),
                    zoom = NULL,
                    map_type = NULL,
